@@ -47,3 +47,19 @@ GAME_MAP += [
     [PLAYER_NAME + "'s sleeping quarters", 9, 11, False, False], # room 36
     ["West corridor", 15, 5, True, True], # room 37
     ["The briefing room", 7, 13, False, True], # room 38
+    ["The crew's community room", 11, 13, True, False], # room 39
+    ["Main Mission Control", 14, 14, False, False], # room 40
+    ["The sick bay", 12, 7, True, False], # room 41
+    ["West corridor", 9, 7, True, False], # room 42
+    ["Utilities control room", 9, 9, False, True], # room 43
+    ["Systems engineering bay", 9, 11, False, False], # room 44
+    ["Security portal to Mission Control", 7, 7, True, False], # room 45
+    [FRIEND1_NAME + "'s sleeping quarters", 9, 11, True, True], # room 46
+    [FRIEND2_NAME + "'s sleeping quarters", 9, 11, True, True], # room 47
+    ["The pipeworks", 13, 11, True, False], # room 48
+    ["The chief scientist's office", 9, 7, True, True], # room 49
+    ["The robot workshop", 9, 11, True, False] # room 50
+]
+
+#simple sanity check on map above to check data entry
+assert len(GAME_MAP)-1 == MAP_SIZE, "Map size and GAME_MAP dont match"
