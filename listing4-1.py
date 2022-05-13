@@ -28,3 +28,7 @@ MAP_SIZE = MAP_WIDTH * MAP_HEIGHT
 
 GAME_MAP = [ ["Room 0 - where unused objects are kept", 0, 0, False, False] ]
 
+outdoor_rooms = range(1,26)
+for planetsectors in range(1,26): #rooms 1 to 25 are generated here
+    GAME_MAP.append( ["The dusty planet surface", 13, 13, True, True] )
+    
