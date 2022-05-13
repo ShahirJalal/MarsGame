@@ -18,3 +18,10 @@ top_left_y = 150
 
 DEMO_OBJECTS = [images.floor, images.pillar, images.soil]
 
+#############
+##   MAP   ##
+#############
+
+MAP_WIDTH = 5
+MAP_HEIGHT = 10
+MAP_SIZE = MAP_WIDTH * MAP_HEIGHT
