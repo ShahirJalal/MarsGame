@@ -40,3 +40,10 @@ GAME_MAP += [
     ["The viewing gallery", 9, 15, False, False], # room 29
     ["The crew's bathroom", 5, 5, False, False], # room 30
     ["The airlock entry bay", 7, 11, True, True], # room 31
+    ["Left elbow room", 9, 7, True, False], # room 32
+    ["Right elbow room", 7, 13, True, True], # room 33
+    ["The science lab", 13, 13, False, True], # room 34
+    ["The green house", 13, 13, True, False], # room 35
+    [PLAYER_NAME + "'s sleeping quarters", 9, 11, False, False], # room 36
+    ["West corridor", 15, 5, True, True], # room 37
+    ["The briefing room", 7, 13, False, True], # room 38
