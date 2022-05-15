@@ -156,4 +156,28 @@ def draw():
             screen.blit(image_to_draw,
                         (top_left_x + (x*30),
                          top_left_y + (y*30) - image_to_draw.get_height()))
-                         
+
+def movement():
+    global current_room
+    old_room = current_room
+
+    if keyboard.left:
+        current_room -= 1
+    if keyboard.right:
+        current_room += 1
+    if keyboard.up:
+        current_room -= MAP_WIDTH
+    if keyboard.down:
+        current_room += MAP_WIDTH
+
+    if current_room > 50:
+        current_room = 50
+    if current_room < 1:
+        current_room = 1
+
+    if current_room != old_room:
+        print("Entering:" + str(current_room))
+
+clock.schedule_interval(movement, 0.1)
+
+pgzrun.go()
