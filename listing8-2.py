@@ -69,8 +69,11 @@ PLAYER_SHADOW = {
     "up": [images.spacesuit_back_shadow, images.spacesuit_back_1_shadow,
            images.spacesuit_back_2_shadow, images.spacesuit_back_3_shadow,
            images.spacesuit_back_3_shadow
-           ]
-   
+           ],
+    "down": [images.spacesuit_front_shadow, images.spacesuit_front_1_shadow,
+             images.spacesuit_front_2_shadow, images.spacesuit_front_3_shadow,
+             images.spacesuit_front_3_shadow
+             ]      
 }
 
 #############
