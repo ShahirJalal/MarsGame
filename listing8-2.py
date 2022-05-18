@@ -76,6 +76,13 @@ PLAYER_SHADOW = {
              ]      
 }
 
+player_image_shadow = PLAYER_SHADOW["down"][0]
+
+PILLARS = [
+    images.pillar, images.pillar_95, images.pillar_80,
+    images.pillar_60, images.pillar_50
+    ]
+
 #############
 ##   MAP   ##
 #############
