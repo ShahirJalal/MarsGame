@@ -62,7 +62,11 @@ PLAYER_SHADOW = {
              images.spacesuit_left_2_shadow, images.spacesuit_left_3_shadow,
              images.spacesuit_left_3_shadow
              ],
-
+    "right": [images.spacesuit_right_shadow, images.spacesuit_right_1_shadow,
+              images.spacesuit_right_2_shadow, images.spacesuit_right_3_shadow,
+              images.spacesuit_right_3_shadow
+             ],
+             
 }
 
 #############
