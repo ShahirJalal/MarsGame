@@ -519,15 +519,15 @@ def draw_image(image, y, x):
     screen.blit(
         image,
         (top_left_x + (x * TILE_SIZE),
-        top_left_y + (y* TILE_SIZE) - image.get_height())
-    )
+         top_left_y + (y * TILE_SIZE) - image.get_height())
+        )
 
 def draw_shadow(image, y, x):
     screen.blit(
         image,
         (top_left_x + (x * TILE_SIZE),
-        top_left_y + (y * TILE_SIZE))
-    )
+         top_left_y + (y * TILE_SIZE))
+        )
 
 def draw_player():
     player_image = PLAYER[player_direction][player_frame]
@@ -562,20 +562,36 @@ def draw():
     for y in range(room_height):
         for x in range(room_width):
             item_here = room_map[y][x]
-            #Player cannot walk on 255: it marks spaces used by wide objects
+            # Player cannot walk on 255: it marks spaces used by wide objects
             if item_here not in items_player_may_stand_on + [255]:
                 image = objects[item_here][0]
 
                 if (current_room in outdoor_rooms
                     and y == room_height - 1
-                    and room_map[y][x] == 1) or \
-                    (current_room not in outdoor_rooms
+                    and room_map[y][x] == 1) or (current_room not in outdoor_rooms
                     and y == room_height - 1
                     and room_map[y][x] == 1
                     and x > 0
                     and x < room_width - 1):
                     # Add transparent wall image in the front row.
                     image = PILLARS[wall_transparency_frame]
+
+                draw_image(image, y, x)
+
+                if objects[item_here][1] is not None: # If object has a shadow
+                    shadow_image = objects[item_here][1]
+                    #if shadow might need horizontal tiling
+                    if shadow_image in [images.half_shadow,
+                                        images.full_shadow]:
+                        shadow_width = int(image.get_width() / TILE_SIZE)
+                        # Use shadow across width of object.
+                        for z in range(0, shadow_width):
+                            draw_shadow(shadow_image, y, x+z)
+
+        if (player_y == y):
+                draw_player()
+
+    screen.surface.set_clip(None)
 
 ###############
 ##   START   ##
