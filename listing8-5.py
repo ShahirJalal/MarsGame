@@ -559,7 +559,23 @@ def draw():
         if image_on_pad > 0:
             draw_image(objects[image_on_pad][0],8,2)
 
-    
+    for y in range(room_height):
+        for x in range(room_width):
+            item_here = room_map[y][x]
+            #Player cannot walk on 255: it marks spaces used by wide objects
+            if item_here not in items_player_may_stand_on + [255]:
+                image = objects[item_here][0]
+
+                if (current_room in outdoor_rooms
+                    and y == room_height - 1
+                    and room_map[y][x] == 1) or \
+                    (current_room not in outdoor_rooms
+                    and y == room_height - 1
+                    and room_map[y][x] == 1
+                    and x > 0
+                    and x < room_width - 1):
+                    # Add transparent wall image in the front row.
+                    image = PILLARS[wall_transparency_frame]
 
 ###############
 ##   START   ##
