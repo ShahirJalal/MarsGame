@@ -533,8 +533,33 @@ def draw_player():
     player_image = PLAYER[player_direction][player_frame]
     draw_image(player_image, player_y + player_offset_y,
                player_x + player_offset_x)
-player_image_shadow = PLAYER_SHADOW[player_direction][player_frame]
-draw_shadow(player_image_shadow, player_y + player_offset_y, player_x + player_offset_x)
+    player_image_shadow = PLAYER_SHADOW[player_direction][player_frame]
+    draw_shadow(player_image_shadow, player_y + player_offset_y, 
+                player_x + player_offset_x)
+
+def draw():
+    if game_over:
+        return
+
+    # Clear the arena area.
+    box = Rect((0,150), (800, 600))
+    screen.draw.filled_rect(box, RED)
+    box = Rect ((0,0), (800, top_left_y + (room_height - 1)*30))
+    screen.surface.set_clip(box)
+    floor_type = get_floor_type()
+
+    for y in range(room_height): # Lay down floor tiles, then items of floor.
+        for x in range(room_width):
+            draw_image(objects[floor_type][0], y, x)
+
+    # Pressure pad in room 26 is added here, so props can go on top of it.
+    if current_room == 26:
+        draw_image(objects[39][0], 8, 2)
+        image_on_pad = room_map[8][2]
+        if image_on_pad > 0:
+            draw_image(objects[image_on_pad][0],8,2)
+
+    
 
 ###############
 ##   START   ##
