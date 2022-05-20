@@ -401,6 +401,9 @@ def generate_map():
     center_x = int(WIDTH / 2)
     room_pixel_width = room_width * TILE_SIZE #Size of room in pixels
     roo_pixel_height = room_height * TILE_SIZE
+    top_left_x = center_x - 0.5 * room_pixel_width
+    top_left_y = (center_y 0.5 * room_pixel_height) + 110
+
 
 
 ###############
