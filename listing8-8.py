@@ -400,9 +400,9 @@ def generate_map():
     center_y = int(HEIGHT / 2) #Center of game window
     center_x = int(WIDTH / 2)
     room_pixel_width = room_width * TILE_SIZE #Size of room in pixels
-    roo_pixel_height = room_height * TILE_SIZE
+    room_pixel_height = room_height * TILE_SIZE
     top_left_x = center_x - 0.5 * room_pixel_width
-    top_left_y = (center_y 0.5 * room_pixel_height) + 110
+    top_left_y = (center_y - 0.5 * room_pixel_height) + 110
 
 
 
@@ -604,7 +604,7 @@ def draw():
 def adjust_wall_transparency():
     global wall_transparency_frame
 
-    if (player_y == room_height - 2)
+    if ((player_y == room_height - 2)
         and room_map[room_height - 1][player_x] == 1
         and wall_transparency_frame < 4):
         wall_transparency_frame += 1 # Fade wall out.
