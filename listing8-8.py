@@ -617,6 +617,11 @@ def adjust_wall_transparency():
 def show_text(text_to_show, line_number):
     if game_over:
         return
+    text_lines = [15, 50]
+    box = Rect((0, text_lines[line_number]), (800, 35))
+    screen.draw.filled_rect(box, BLACK)
+    screen.draw.text(text_to_show,
+                     (20, text_lines[line_number]), color=GREEN)
 
 ###############
 ##   START   ##
