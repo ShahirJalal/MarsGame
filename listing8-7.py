@@ -609,6 +609,11 @@ def adjust_wall_transparency():
         and wall_transparency_frame < 4):
         wall_transparency_frame += 1 # Fade wall out.
 
+    if ((player_y < room_height - 2
+            or room_map[room_height - 1][player_x] != 1)
+            and wall_transparency_frame > 0):
+        wall_transparency_frame -= 1 # Fade wall in.
+
 ###############
 ##   START   ##
 ###############
