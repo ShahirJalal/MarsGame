@@ -620,5 +620,6 @@ def adjust_wall_transparency():
 
 clock.schedule_interval(game_loop, 0.03)
 generate_map()
+clock.schedule_interval(adjust_wall_transparency,0.05)
 
 pgzrun.go()
