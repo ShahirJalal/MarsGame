@@ -405,7 +405,6 @@ def generate_map():
     top_left_y = (center_y - 0.5 * room_pixel_height) + 110
 
 
-
 ###############
 ## GAME LOOP ##
 ###############
@@ -519,6 +518,7 @@ def game_loop():
     if player_direction == "down" and player_frame > 0:
         player_offset_y = -1 + (0.25 * player_frame)
 
+
 ###############
 ##  DISPLAY  ##
 ###############
@@ -622,6 +622,7 @@ def show_text(text_to_show, line_number):
     screen.draw.filled_rect(box, BLACK)
     screen.draw.text(text_to_show,
                      (20, text_lines[line_number]), color=GREEN)
+
 
 ###############
 ##   START   ##
