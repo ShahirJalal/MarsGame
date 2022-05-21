@@ -470,7 +470,7 @@ def game_loop():
         player_x = 0 # enter at left
         player_y = int(room_height / 2) # enter at door
         player_frame = 0
-        #start_room()
+        start_room()
         return
 
     if player_x == -1: # through door on LEFT
