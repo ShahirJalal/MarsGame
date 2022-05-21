@@ -409,7 +409,8 @@ def generate_map():
 ## GAME LOOP ##
 ###############
 
-
+def start_room():
+    show_text("You are here: " + room_name, 0)
 
 def game_loop():
     global player_x, player_y, current_room
