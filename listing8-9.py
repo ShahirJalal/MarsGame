@@ -500,7 +500,7 @@ def game_loop():
         player_y = room_height - 1 # enter at door
         player_x = int(room_width / 2) #enter at door
         player_frame = 0
-        #start_room()
+        start_room()
         return
     
 
