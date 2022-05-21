@@ -490,7 +490,7 @@ def game_loop():
         player_y = 0 # enter at top
         player_x = int(room_width / 2) # enter at door
         player_frame = 0
-        #start_room()
+        start_room()
         return
 
     if player_y == -1: #through door at TOP
