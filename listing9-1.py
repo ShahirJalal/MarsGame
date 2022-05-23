@@ -645,6 +645,15 @@ props = {
     78: [35, 9, 11], 79: [26, 3, 2], 80: [41, 7, 5], 81: [29, 1, 1]
     }
 
+checksum = 0
+for key, prop in props.items():
+    if key != 71:
+        checksum += (prop[0] * key
+                     + prop[1] * (key + 1)
+                     + prop[2] * (key + 2))
+print(len(props), "props")
+assert len(props) == 37, "Expected"
+
 ###############
 ##   START   ##
 ###############
