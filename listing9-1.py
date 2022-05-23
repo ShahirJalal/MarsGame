@@ -652,7 +652,14 @@ for key, prop in props.items():
                      + prop[1] * (key + 1)
                      + prop[2] * (key + 2))
 print(len(props), "props")
-assert len(props) == 37, "Expected"
+assert len(props) == 37, "Expected 37 prop items"
+print("Prop checksum:", checksum)
+assert checksum == 61414, "Error in props data"
+
+in_my_pockets = [55]
+selected_items = 0
+item_carrying = in_my_pockets[selected_items]
+
 
 ###############
 ##   START   ##
